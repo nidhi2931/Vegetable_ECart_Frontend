@@ -1,6 +1,7 @@
 import {Link,useNavigate} from 'react-router-dom';
 import {useContext} from 'react';
 import {AuthContext} from "../context/AuthContext";
+import banner from "../../public/banner1.jpg";
 
 
 export default function Navbar(){
@@ -15,7 +16,8 @@ export default function Navbar(){
     };
 
     return(
-        <nav style={{padding:"10px",borderBottom:"1px solid #ccc"}}>
+        <div class="h-screen flex flex-col">
+        <nav className="h-16 p-4 border-b border-gray-300 bg-[#c5aa6a] text-white text-lg">
             <Link to="/">Products</Link> |{" "}
             <Link to="/cart">Cart</Link> |{" "}
             <Link to="/orders">Orders</Link>
@@ -34,5 +36,12 @@ export default function Navbar(){
                 )}
             </span>
         </nav>
+        <div className="flex-1 overflow-hidden">
+            <img src={banner} className="w-full h-full object-cover blur-sm" alt="banner"/>
+        </div>
+        
+        </div>
+        
+           
     )
 }
