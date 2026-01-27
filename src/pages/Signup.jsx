@@ -43,7 +43,7 @@ export default function Signup(){
             
 
             <input name="username" placeholder = "Username" onChange={handleChange} />
-            <inputt name="email" placeholder ="Email" onChange={handleChange} />
+            <input name="email" placeholder ="Email" onChange={handleChange} />
             <input type="password" name="password" placeholder="Password" onChange={handleChange} />
             <input type="password" name="password2" placeholder="Confirm Password" onChange={handleChange} />
 
