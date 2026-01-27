@@ -1,13 +1,18 @@
 import {useState,useContext} from "react";
 import api from "../api/axios";
 import { AuthContext } from "../context/AuthContext";
+import CardImage from "../assets/Login_Signup_Image.jpg";
+import Navbar from "../components/Navbar";
 
 
 export default function Login(){
     const {login} = useContext(AuthContext);
     const [form,setForm] = useState({username:"",password:""});
 
+      const handleChange=(e)=>{
+        setForm({...form,[e.target.name]:e.target.value});
 
+    };
     const handleSubmit = async(e) =>{
         e.preventDefault();
         const res = await api.post('auth/login/',form);
@@ -16,10 +21,63 @@ export default function Login(){
     };
 
     return(
-        <form onSubmit={handleSubmit}>
-            <input placeholder="Username" onChange={(e)=>setForm({...form,username:e.target.value})} />
-            <input type="password" placeholder="Password" onChange={(e)=>setForm({...form,password:e.target.value})} />
-            <button>Login</button>
-        </form>
+
+        <div>
+            <Navbar />
+
+            <div className="h-[calc(100vh-4rem)] flex items-center justify-center bg-gray-50 overflow-hidden relative">
+
+                {/* CARD */}
+                <div className="grid grid-cols-1 md:grid-cols-2 bg-white rounded-2xl overflow-hidden border border-green-100 shadow-[6px_6px_0px_rgba(22,101,52,0.25)] max-w-4xl w-full max-h-[85vh]">
+               
+               
+                    {/* LEFT IMAGE */}
+                    <div className="hidden md:block">
+                        <img src={CardImage} alt="Vegetables" className="h-full w-full object-cover"/>
+                    </div>
+
+
+                    {/* RIGHT FORM */}
+                <div className="p-8 flex flex-col justify-center">
+                    <h2 className="text-2xl font-bold text-green-800 mb-2">
+                        Create Account
+                    </h2>
+                    <p className="text-sm text-gray-600 mb-6">
+                        Fresh vegetables delivered to your doorstep
+                    </p>
+
+               
+        
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <input name="username" placeholder="Username" 
+                         className="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-screen-600 outline-none" 
+                         onChange={handleSubmit} />
+                        <input
+                            type="password"
+                            name="password2"
+                            placeholder="Confirm Password"
+                            onChange={handleChange}
+                            className="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-green-600 outline-none"
+                            />
+                            <button
+                                type="submit"
+                                className="w-full bg-green-800 text-white py-2 rounded hover:bg-green-900 transition"
+                            >
+                                Log In
+                            </button>
+                    </form>
+                     <p className="text-sm text-center mt-4">
+                        Create an account?{" "}
+                        <span
+                        onClick={() => navigate("/signup")}
+                        className="text-green-800 cursor-pointer hover:underline"
+                        >
+                        Sign Up
+                        </span>
+                    </p>  
+                </div>
+                 </div>
+            </div>
+        </div>
     );
 }
