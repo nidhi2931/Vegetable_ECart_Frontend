@@ -68,7 +68,7 @@ export default function Signup(){
                         <input name="username" placeholder ="Username" onChange={handleChange} 
                         className="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-screen-600 outline-none" />
 
-                        <input type="email" name="email" placholder="Email" onChange={handleChange} className="w-full px-4 py-2 border rounded
+                        <input type="email" name="email" placeholder="Email" onChange={handleChange} className="w-full px-4 py-2 border rounded
                         focus:ring-2 focus:ring-green-600 outline-none" />
                         <input
                             type="password"

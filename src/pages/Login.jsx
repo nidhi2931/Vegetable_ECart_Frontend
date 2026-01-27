@@ -1,11 +1,13 @@
 import {useState,useContext} from "react";
 import api from "../api/axios";
 import { AuthContext } from "../context/AuthContext";
+import {useNavigate} from "react-router-dom";
 import CardImage from "../assets/Login_Signup_Image.jpg";
 import Navbar from "../components/Navbar";
 
 
 export default function Login(){
+    const navigate = useNavigate();
     const {login} = useContext(AuthContext);
     const [form,setForm] = useState({username:"",password:""});
 
@@ -54,8 +56,8 @@ export default function Login(){
                          onChange={handleSubmit} />
                         <input
                             type="password"
-                            name="password2"
-                            placeholder="Confirm Password"
+                            name="password"
+                            placeholder="Password"
                             onChange={handleChange}
                             className="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-green-600 outline-none"
                             />
@@ -72,7 +74,7 @@ export default function Login(){
                         onClick={() => navigate("/signup")}
                         className="text-green-800 cursor-pointer hover:underline"
                         >
-                        Sign Up
+                        SignUp
                         </span>
                     </p>  
                 </div>
