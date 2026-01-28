@@ -22,7 +22,7 @@ export default function Navbar(){
         <nav className="relative h-16 px-8 flex items-center justify-between  border-b border-gray-300 bg-green-800 text-white text-lg">
 
             <div className="hidden md:flex items-center gap-4">
-                <Link to="/" className="hover:underline">Products</Link>
+                <Link to="/products" className="hover:underline">Products</Link>
                 <Link to="/cart" className="hover:underline">Cart</Link>
                 <Link to="/orders" className="hover:underline">Orders</Link>
             </div>
@@ -48,7 +48,7 @@ export default function Navbar(){
             {menuOpen &&(
                 <div className="absolute top-16 left-0 w-full md:hidden bg-green-900 text-white px-6 py-4 flex flex-col gap-3 z-50">
 
-                    <Link className="block w-full py-2" to="/" onClick={()=>setMenuOpen(false)}>Products</Link>
+                    <Link className="block w-full py-2" to="/products" onClick={()=>setMenuOpen(false)}>Products</Link>
                     <Link className="block w-full py-2" to="/cart" onClick ={()=>setMenuOpen(false)}>Cart</Link>
                     <Link className="block w-full py-2" to="/orders" onClick={()=>setMenuOpen(false)}>Orders</Link>
 
