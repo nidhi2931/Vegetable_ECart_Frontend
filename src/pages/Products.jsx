@@ -2,10 +2,17 @@ import {useEffect,useState} from "react";
 import ProductCard from "../components/ProductCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import tomato from "../assets/vegetable_images/tomato.png";
+import potato from "../assets/vegetable_images/potato.png";
+import onion from "../assets/vegetable_images/onion.png";
+import mushroom from "../assets/vegetable_images/mushroom.png";
+
 
 const PRODUCTS =[
-    {id:1,name:"Tomato",price:40},
-    {id:1,name:"Tomato",price:40},
+    {id:1,name:"Tomato",price:40,image:tomato},
+    {id:2,name:"Potato",price:20,image:potato},
+     {id:3,name:"Onion",price:30,image:onion},
+      {id:4,name:"Mushroom",price:15,image:mushroom},
 
 ]
 

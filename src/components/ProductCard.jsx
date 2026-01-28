@@ -8,7 +8,7 @@ export default function ProductCard({
 {
     return(
         <div className="bg-white rounded-xl border border-green-100 p-4 shadow-sm">
-            <div className="h-32 bg-green-50 rounded mb-3"></div>
+            <img src={product.image || "/placeholder.png"} alt={product.name} className="h-32 w-full object-contain mb-3"/>
             <h3 className="font-semibold">{product.name}</h3>
             <p className="text-sm text-gray-600">{product.price}/kg</p>
 
