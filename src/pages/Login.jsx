@@ -42,10 +42,10 @@ export default function Login(){
                     {/* RIGHT FORM */}
                 <div className="p-8 flex flex-col justify-center">
                     <h2 className="text-2xl font-bold text-green-800 mb-2">
-                        Create Account
+                        Welcome Back
                     </h2>
                     <p className="text-sm text-gray-600 mb-6">
-                        Fresh vegetables delivered to your doorstep
+                        Login to continue shopping fresh vegetables
                     </p>
 
                
